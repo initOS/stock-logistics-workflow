@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* picking_progress
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-14 14:19+0000\n"
+"PO-Revision-Date: 2017-02-14 15:24+0100\n"
+"Last-Translator: Andreas Zoellner <andreas.zoellner@initos.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: de\n"
+
+#. module: picking_progress
+#: model:ir.model.fields,help:picking_progress.field_stock_picking_progress
+msgid "Percentage of non-cancelled stock moves that are done."
+msgstr "Prozentsatz der nicht-abgebrochenen Lagerbuchungen, die erledigt sind."
+
+#. module: picking_progress
+#: model:ir.model.fields,field_description:picking_progress.field_stock_picking_progress
+msgid "Progress"
+msgstr "Fortschritt"
+
+#. module: picking_progress
+#: model:ir.model,name:picking_progress.model_stock_picking
+msgid "Transfer"
+msgstr ""
