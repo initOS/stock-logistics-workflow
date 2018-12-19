@@ -40,8 +40,8 @@ class StockPicking(models.Model):
         """
         for picking in self:
             picking.max_line_sequence = (
-                max(picking.mapped('move_lines.sequence') or [0]) + 1
-                )
+                    max(picking.mapped('move_lines.sequence') or [0]) + 1
+            )
 
     max_line_sequence = fields.Integer(string='Max sequence in lines',
                                        compute='_compute_max_line_sequence')
@@ -64,3 +64,27 @@ class StockPicking(models.Model):
     def copy(self, default=None):
         return super(StockPicking,
                      self.with_context(keep_line_sequence=True)).copy(default)
+
+    @api.model
+    def add_picking_sequences(self, chunk_size=50):
+        """
+        Method for cron job to replace the post init hook because this hook
+        would cause the deployment to take too long.
+        Default value for sequence is 9999. So we will just search for those
+        :return:
+        """
+        moves = self.env['stock.move'].search([
+            ('sequence', '=', '9999'),
+        ])
+        pickings = moves.mapped('picking_id')
+
+        chunk_no = 0
+        end = 0
+        while end < len(pickings):
+            begin = chunk_no * chunk_size
+            end = begin + chunk_size - 1
+            if end < len(pickings):
+                pickings[begin:end]._reset_sequence()
+            else:
+                pickings[begin:]._reset_sequence()
+            self.env.cr.commit()

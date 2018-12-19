@@ -21,8 +21,8 @@
     ],
     'data': [
         'views/stock_view.xml',
+        'data/ir_cron.xml',
     ],
-    'post_init_hook': 'post_init_hook',
     'installable': True,
     'auto_install': False,
     'license': "AGPL-3",
