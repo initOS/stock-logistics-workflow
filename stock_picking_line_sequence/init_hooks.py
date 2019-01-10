@@ -16,27 +16,42 @@ def pre_init_hook(cr):
     """
     _logger.info('Working on PRE INIT HOOK...')
 
-    # Add columns
-    _logger.info('Adding sequence and sequence2 to stock_move...')
-    t_begin = datetime.now()
     cmd = """
-        ALTER TABLE stock_move
-        ADD COLUMN IF NOT EXISTS sequence  integer,
-        ADD COLUMN IF NOT EXISTS sequence2 integer;
+        SELECT column_name 
+          FROM information_schema.columns 
+         WHERE table_name = 'stock_move' 
+           AND column_name in ('sequence', 'sequence2');
         """
     cr.execute(cmd)
-    _logger.info('Time needed: %s', (str(datetime.now() - t_begin),))
+    existing_columns = cr.fetchall()
+    existing_columns = set(c[0] for c in existing_columns)
 
-    # fill new columns with data
-    _logger.info('Filling sequence and sequence2 of stock_move with initial '
-                 'value (9999)...')
-    t_begin = datetime.now()
-    cmd = """
-        UPDATE stock_move 
-           SET sequence = 9999, 
-               sequence2 = 9999;
-        """
-    cr.execute(cmd)
-    _logger.info('Time needed: %s', (str(datetime.now() - t_begin),))
+    if not existing_columns.issuperset(['sequence', 'sequence2']):
+        # Add columns
+        _logger.info('Adding sequence and sequence2 to stock_move...')
+        t_begin = datetime.now()
+        cmd = """
+            ALTER TABLE stock_move
+            ADD COLUMN sequence  integer,
+            ADD COLUMN sequence2 integer;
+            """
+        cr.execute(cmd)
+        _logger.info('Time needed: %s', (str(datetime.now() - t_begin),))
+
+        # fill new columns with data
+        _logger.info('Filling sequence and sequence2 of stock_move with '
+                     'initial value (9999)...')
+        t_begin = datetime.now()
+        cmd = """
+            UPDATE stock_move 
+               SET sequence = 9999, 
+                   sequence2 = 9999;
+            """
+        cr.execute(cmd)
+        _logger.info('Time needed: %s', (str(datetime.now() - t_begin),))
+    elif 'sequence' in existing_columns or 'sequence2' in existing_columns:
+        _logger.error('It is expected that sequence AND sequence2 always occur '
+                      'together but they don\'t. Existing fields: %s',
+                      (existing_columns,))
 
     _logger.info('Finished working on PRE INIT HOOK...')
