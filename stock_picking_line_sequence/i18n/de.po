@@ -1,44 +1,47 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * stock_picking_line_sequence
+#	* stock_picking_line_sequence
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-03 03:56+0000\n"
-"PO-Revision-Date: 2017-12-03 03:56+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
-"Language: de\n"
+"POT-Creation-Date: 2019-02-05 14:53+0000\n"
+"PO-Revision-Date: 2019-02-05 14:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: stock_picking_line_sequence
-#: model:ir.model.fields,field_description:stock_picking_line_sequence.field_stock_picking_max_line_sequence
+#: field:stock.picking,max_line_sequence:0
 msgid "Max sequence in lines"
-msgstr "Höchstmögliche Positionsnummer"
+msgstr "Höchstmöglicher Wert für Position auf Lieferscheinen."
 
 #. module: stock_picking_line_sequence
-#: model:ir.model.fields,field_description:stock_picking_line_sequence.field_stock_move_sequence2
+#: model:ir.model,name:stock_picking_line_sequence.model_stock_picking
+msgid "Picking List"
+msgstr "Pickliste"
+
+#. module: stock_picking_line_sequence
+#: field:stock.move,sequence:0
+#: field:stock.move,sequence2:0
 msgid "Sequence"
 msgstr "Pos."
 
 #. module: stock_picking_line_sequence
-#: model:ir.model.fields,help:stock_picking_line_sequence.field_stock_move_sequence2
+#: help:stock.move,sequence2:0
 msgid "Shows the sequence in the Stock Move."
-msgstr "Zeigt die Positionen der Lagerbewegungen auf Lieferscheinen an."
+msgstr "Zeigt die Position auf dem Lieferschein an."
 
 #. module: stock_picking_line_sequence
 #: model:ir.model,name:stock_picking_line_sequence.model_stock_move
 msgid "Stock Move"
-msgstr "Lagerbuchung"
+msgstr "Lagerbewegung"
 
 #. module: stock_picking_line_sequence
-#: model:ir.model,name:stock_picking_line_sequence.model_stock_picking
-msgid "Transfer"
-msgstr "Lieferung vornehmen"
+#: view:stock.picking:stock_picking_line_sequence.view_picking_form
+msgid "{'address_in_id': partner_id, 'form_view_ref':'stock.view_move_picking_form', 'tree_view_ref':'stock.view_move_picking_tree', 'default_picking_type_id': picking_type_id, 'default_location_id': location_id, 'default_location_dest_id': location_dest_id, 'default_sequence': max_line_sequence}"
+msgstr ""
