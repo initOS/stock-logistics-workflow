@@ -21,17 +21,17 @@ msgstr ""
 #. module: stock_picking_line_sequence
 #: model:ir.model.fields,field_description:stock_picking_line_sequence.field_stock_picking_max_line_sequence
 msgid "Max sequence in lines"
-msgstr ""
+msgstr "Höchstmögliche Positionsnummer"
 
 #. module: stock_picking_line_sequence
 #: model:ir.model.fields,field_description:stock_picking_line_sequence.field_stock_move_sequence2
 msgid "Sequence"
-msgstr "Reihenfolge"
+msgstr "Pos."
 
 #. module: stock_picking_line_sequence
 #: model:ir.model.fields,help:stock_picking_line_sequence.field_stock_move_sequence2
 msgid "Shows the sequence in the Stock Move."
-msgstr ""
+msgstr "Zeigt die Positionen der Lagerbewegungen auf Lieferscheinen an."
 
 #. module: stock_picking_line_sequence
 #: model:ir.model,name:stock_picking_line_sequence.model_stock_move
