@@ -78,13 +78,7 @@ class StockPicking(models.Model):
         ])
         pickings = moves.mapped('picking_id')
 
-        chunk_no = 0
-        end = 0
-        while end < len(pickings):
-            begin = chunk_no * chunk_size
-            end = begin + chunk_size - 1
-            if end < len(pickings):
-                pickings[begin:end]._reset_sequence()
-            else:
-                pickings[begin:]._reset_sequence()
+        for i in range(0, len(pickings), chunk_size):
+            pickings[i:][:chunk_size]._reset_sequence()
             self.env.cr.commit()
+
