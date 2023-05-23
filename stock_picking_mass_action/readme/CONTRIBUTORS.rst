@@ -4,3 +4,5 @@
   * Vicent Cubells
   * Carlos Dauden
   * Sergio Teruel
+
+* Dhara Solanki <dhara.solanki@initos.com>
