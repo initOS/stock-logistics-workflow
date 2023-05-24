@@ -48,6 +48,7 @@ addon | version | maintainers | summary
 [stock_receipt_lot_info](stock_receipt_lot_info/) | 16.0.1.0.0 |  | Be able to introduce more info on lot/serial number while processing a receipt.
 [stock_restrict_lot](stock_restrict_lot/) | 16.0.1.1.0 | [![florian-dacosta](https://github.com/florian-dacosta.png?size=30px)](https://github.com/florian-dacosta) | Base module that add back the concept of restrict lot on stock move
 [stock_split_picking](stock_split_picking/) | 16.0.1.0.2 |  | Split a picking in two not transferred pickings
+[sale_line_returned_qty](sale_line_returned_qty/) | 16.0.1.0.0 |  | Track returned quantity of sale order lines.
 
 [//]: # (end addons)
 

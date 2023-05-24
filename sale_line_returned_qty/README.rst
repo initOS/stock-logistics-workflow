@@ -14,7 +14,7 @@ Sale Line Returned Qty
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fstock--logistics--workflow-lightgray.png?logo=github
-    :target: https://github.com/OCA/stock-logistics-workflow/tree/15.0/sale_line_returned_qty
+    :target: https://github.com/OCA/stock-logistics-workflow/tree/16.0/sale_line_returned_qty
     :alt: OCA/stock-logistics-workflow
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
     :target: https://translation.odoo-community.org/projects/stock-logistics-workflow-15-0/stock-logistics-workflow-15-0-sale_line_returned_qty
@@ -57,6 +57,8 @@ Contributors
 
     * Jordi Masvidal
 
+* Dhara Solanki <dhara.solanki@initos.com>
+
 Maintainers
 ~~~~~~~~~~~
 
@@ -70,6 +72,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/stock-logistics-workflow <https://github.com/OCA/stock-logistics-workflow/tree/15.0/sale_line_returned_qty>`_ project on GitHub.
+This module is part of the `OCA/stock-logistics-workflow <https://github.com/OCA/stock-logistics-workflow/tree/16.0/sale_line_returned_qty>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
